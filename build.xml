@@ -4,7 +4,7 @@
 	 <taskdef resource="net/sf/antcontrib/antlib.xml"/> 
 	 
 	 <!-- Making Windows command environment  -->
-	 <target name="Setting_Windows_envirnment">
+	 <target name="mqsiprofile.cmd">
 	 <exec executable="${broker.mqsi.path}\mqsiprofile.cmd" />
 	 </target>
 	<!-- Creating a bar file -->
@@ -31,11 +31,14 @@
 		</target>
 		
 	<!-- deploying a bar file-->
-		<target name="deploy" depends="Setting_Windows_envirnment,Create_bar">
+		<target name="deploy" depends="Create_bar">
 			<for list="${project_name}" delimiter="," param="pName">
 				<sequential>
 				<echo message="@{pName}"/>
-				<exec executable="${broker.mqsi.path}\mqsideployscript.bat" spawn="false"  >
+				<exec executable="${batfile}\Shyam.bat" vmlauncher="false">
+				<arg value="${broker.mqsi.path}\mqsiprofile.cmd"/>
+				<arg value="${broker.mqsi.path}\mqsideployscript.bat"/>
+			<!--	<exec executable="${broker.mqsi.path}\mqsideployscript.bat" spawn="false"  > -->
 					<arg value="${broker_name}" />
 					<arg value="-e" />
 					<arg value="${exegroup}" />
