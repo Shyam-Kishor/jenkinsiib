@@ -22,7 +22,7 @@
 					<!--project Name-->
 					<arg value="-p" />
 					<arg value="@{pName}" />
-					<!--Message flows for its corresponding projects which has given in cvsCheckout.properties-->
+					<!--Message flows for its corresponding projects which has given in the cvsCheckout.properties-->
 					<arg value="-o" />
 					<arg line="@{pName}\${@{pName}.flow_name}" />
 				</exec>	
