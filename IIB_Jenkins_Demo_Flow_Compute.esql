@@ -5,7 +5,7 @@ CREATE COMPUTE MODULE IIB_Jenkins_Demo_Flow_Compute
 	BEGIN
 		-- CALL CopyMessageHeaders();
 		-- CALL CopyEntireMessage();
-		SET OutputRoot.XMLNSC.name="Shaym";
+		SET OutputRoot.XMLNSC.name='Shyam';
 		RETURN TRUE;
 	END;
 
